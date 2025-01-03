@@ -15,9 +15,9 @@ function replace() {
 inputs.forEach(input => input.addEventListener('input', replace));
 
 function calculateResults(input1, input2, input3) {
-  let result1 = 1000 / input2;
-  let result2 = (input1 / 60) * result1;
-  let result3 = result2 * input3;
+  const result1 = 1000 / input2;
+  const result2 = (input1 / 60) * result1;
+  const result3 = result2 * input3;
   return [result1, result2, result3];
 }
 
@@ -32,21 +32,21 @@ function resetFields() {
   document.querySelectorAll('input[id^="inputResult"]').forEach(input => input.value = "");
 }
 
+function validateInputs(input1, input2, input3) {
+  return ![input1, input2, input3].some(input => isNaN(input) || input === '' || input === 0);
+}
+
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
     const key = e.target.innerHTML;
-    let [input1, input2, input3] = Array.from(inputs).map(input => input.value);
+    let [input1, input2, input3] = Array.from(inputs).map(input => parseFloat(input.value));
 
     if (key === "Рассчитать") {
-      const [result1, result2, result3] = calculateResults(input1, input2, input3);
-
-      if (isNaN(result1) || result1 === Infinity || result1 === 0 ||
-        isNaN(result2) || result2 === Infinity || result2 === 0 ||
-        isNaN(result3) || result3 === Infinity || result3 === 0) {
-        alert("Введите валидные данные");
-        resetFields();
-      } else {
+      if (validateInputs(input1, input2, input3)) {
+        const [result1, result2, result3] = calculateResults(input1, input2, input3);
         displayResults(result1, result2, result3);
+      } else {
+        alert("Введите валидные данные");
       }
     } else if (key === "Сбросить") {
       resetFields();

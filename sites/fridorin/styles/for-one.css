@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Nunito';
+  font-family: 'Nunito', serif;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   text-align: center;
 }
 
-#container {
+.container {
   width: 800px;
   padding: 20px;
   border-radius: 15px;
@@ -24,12 +24,12 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-#header {
+.header {
   font-size: 30px;
   margin: 0 0 20px 0;
 }
 
-#text {
+.text {
   resize: none;
   height: 750px;
   width: 750px;

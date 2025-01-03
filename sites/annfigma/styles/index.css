@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 * {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-touch-callout: none;
+    user-select: none;
     -webkit-user-select: none;
-    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     text-decoration: none;
 }
 
@@ -15,23 +13,20 @@ body {
     min-width: 380px;
     margin: 0;
     padding: 0;
-    font-family: 'Lexend';
+    font-family: 'Lexend', serif;
 }
 
 /* header */
 .avatar {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    margin-top: 3%;
+    margin: 3% auto 0;
     width: 120px;
     height: 120px;
 }
 
 .avatar img {
     border-radius: 15px;
-    width: 120px;
-    height: 120px;
 }
 
 .title {
@@ -45,9 +40,9 @@ body {
 }
 
 .subtitle {
-    font-family: 'Nunito';
     color: #ffffff;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 300;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -64,8 +59,7 @@ body {
 
 /* channels, social-medias and mail*/
 .channels,
-.social-medias,
-.other-social-medias {
+.social-medias {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -73,13 +67,18 @@ body {
     margin: 0 auto;
 }
 
-/* channels and mail*/
-.channel-text,
-.other-social-media-text {
+/* channels */
+.channels {
+    max-width: 700px;
+}
+
+.channel-text {
+    font-weight: 300;
+    font-size: 20px;
     display: flex;
     position: relative;
     align-items: center;
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
     padding: 6px 10px;
     border-width: 1px;
     border-style: solid;
@@ -91,20 +90,15 @@ body {
     transition: 0.5s;
 }
 
-.channel-text:hover,
-.other-social-media-text:hover {
+.channel-text:hover {
     background: #000000;
     color: #ffffff;
     transition: 0.5s;
 }
 
-.channel-text img,
-.other-social-media-text img {
-    margin-right: 8px;
-}
-
-.channel-text:before,
-.other-social-media-text:before {
+.channel-text:before {
+    left: 33%;
+    top: -70%;
     font-size: 12px;
     content: attr(data-hover);
     visibility: hidden;
@@ -119,41 +113,22 @@ body {
     z-index: 1;
 }
 
-.channel-text:hover:before,
-.other-social-media-text:hover:before {
+.channel-text:hover:before {
     opacity: 1;
     visibility: visible;
     transition: 0.5s;
 }
 
-/* channels */
-.channels {
-    max-width: 700px;
-}
-
-.channel-text {
-    font-family: 'Nunito';
-    font-size: 20px;
-}
-
 .channel-text img {
+    border-radius: 15px;
     height: 25px;
-    border-radius: 10px;
-}
-
-.channel-text img {
-    height: 25px;
-}
-
-.channel-text:before {
-    left: 33%;
-    top: -70%;
+    margin-right: 8px;
 }
 
 /* social-medias */
 .social-medias {
-    font-size: 16px;
-    max-width: 600px;
+    font-size: 14px;
+    max-width: 380px;
 }
 
 .social-media {
@@ -163,7 +138,7 @@ body {
     text-align: center;
     justify-content: center;
     margin: 15px 18px 15px;
-    width: 75px;
+    width: 68px;
     opacity: 1;
     transition: opacity 0.5s;
 }
@@ -174,15 +149,15 @@ body {
 }
 
 .social-media a {
-    width: 75px;
+    width: 68px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .social-media img {
-    width: 75px;
-    height: 75px;
+    width: 68px;
+    height: 68px;
 }
 
 .social-media-txt {
@@ -190,34 +165,13 @@ body {
     color: #bdbdbd;
 }
 
-/* other-social-medias */
-.other-social-medias {
-    max-width: 600px;
-}
-
-.other-social-media-text img {
-    height: 20px;
-}
-
-.other-social-media-text {
-    font-size: 16px;
-}
-
-.other-social-media-text:before {
-    left: 32%;
-    top: -80%;
-}
-
 @media (pointer:coarse) {
-
-    .channel-text:hover,
-    .mail-text:hover {
+    .channel-text:hover {
         color: #ffffffa3;
         background: #00000052;
     }
 
-    .channel-text:hover:before,
-    .mail-text:hover:before {
+    .channel-text:hover:before {
         opacity: 0;
         visibility: hidden;
     }
